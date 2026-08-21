@@ -1,24 +1,25 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
   Instagram,
-  Music4,
-  MessageCircle,
-  Sticker,
-  UserRoundCog,
-  FileDown,
   Youtube,
   Facebook,
+  MessageCircle,
   ArrowUpRight,
   Sparkles,
 } from "lucide-react";
 
-import candidato from "@/assets/candidato.png";
+import banner1 from "@/assets/banner-1.jpg.asset.json";
+import banner2 from "@/assets/banner-2.jpg.asset.json";
+import banner3 from "@/assets/banner-3.jpg.asset.json";
+import banner4 from "@/assets/banner-4.jpg.asset.json";
+import banner5 from "@/assets/banner-5.jpg.asset.json";
 import { Reveal } from "@/components/Reveal";
 
 const CANDIDATO = {
-  nome: "Nome do Candidato",
+  nome: "Thiago de Joaldo",
+  primeiroNome: "Thiago",
   cargo: "Deputado Federal",
-  numero: "00000",
+  numero: "1011",
   slogan: "Esse é de coragem!",
   cidade: "Sergipe",
   whatsapp: "https://wa.me/5500000000000",
@@ -28,32 +29,32 @@ const ACOES = [
   {
     titulo: "Participe do nosso grupo",
     desc: "Notícias da campanha em primeira mão no WhatsApp.",
-    icone: MessageCircle,
+    arte: banner5.url,
     href: CANDIDATO.whatsapp,
     destaque: true,
   },
   {
     titulo: "Baixe o pacote de figurinhas",
-    desc: "Stickers da campanha para mandar em todos os grupos.",
-    icone: Sticker,
+    desc: "Stickers para mandar em todos os grupos.",
+    arte: banner3.url,
     href: "#",
   },
   {
     titulo: "Ouça os jingles",
     desc: "O som que já está tocando em toda a região.",
-    icone: Music4,
+    arte: banner4.url,
     href: "#",
   },
   {
     titulo: "Material de campanha",
     desc: "Adesivos, santinhos e artes para imprimir.",
-    icone: FileDown,
+    arte: banner2.url,
     href: "#",
   },
   {
     titulo: "Personalize seu perfil",
-    desc: "Molduras com o número para sua foto nas redes.",
-    icone: UserRoundCog,
+    desc: "Molduras com o 1011 para sua foto nas redes.",
+    arte: banner1.url,
     href: "#",
   },
 ];
@@ -96,7 +97,6 @@ export const Route = createFileRoute("/")({
 function BioSite() {
   return (
     <main className="relative overflow-hidden">
-      {/* faíscas decorativas */}
       <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -left-24 top-24 h-72 w-72 rounded-full bg-primary/25 blur-3xl animate-float" />
         <div className="absolute right-[-6rem] top-[28rem] h-80 w-80 rounded-full bg-accent/40 blur-3xl animate-float [animation-delay:1.5s]" />
@@ -104,35 +104,18 @@ function BioSite() {
         <Sparkles className="absolute left-8 top-[22rem] h-6 w-6 text-highlight animate-spark [animation-delay:1s]" />
       </div>
 
-      <div className="relative mx-auto w-full max-w-xl px-5 pb-20 pt-10 sm:pt-14">
-        {/* HERO */}
+      <div className="relative mx-auto w-full max-w-xl px-5 pb-28 pt-10 sm:pt-14">
         <header className="text-center">
           <Reveal>
             <p className="text-xs font-black uppercase tracking-[0.35em] text-muted-foreground">
               {CANDIDATO.cargo}
             </p>
             <h1 className="mt-3 text-5xl sm:text-6xl">{CANDIDATO.nome}</h1>
-            <div className="mt-4 inline-flex -rotate-2 items-center gap-3 rounded-xl px-5 py-2 highlight-box">
-              <span className="font-display text-4xl sm:text-5xl leading-none">
+            <div className="mt-4 inline-flex -rotate-2 items-center rounded-xl px-6 py-2 highlight-box">
+              <span className="font-display text-4xl leading-none sm:text-5xl">
                 {CANDIDATO.numero}
               </span>
             </div>
-          </Reveal>
-
-          <Reveal delay={120}>
-            <div className="relative mx-auto mt-6 w-64 sm:w-72">
-              <div className="absolute inset-0 -rotate-3 rounded-[2rem] bg-secondary shadow-[var(--shadow-pop)]" />
-              <img
-                src={candidato}
-                alt={`${CANDIDATO.nome}, candidato a ${CANDIDATO.cargo}`}
-                width={1024}
-                height={1024}
-                className="relative w-full drop-shadow-2xl"
-              />
-            </div>
-          </Reveal>
-
-          <Reveal delay={220}>
             <p className="mt-4 font-display text-2xl text-highlight">{CANDIDATO.slogan}</p>
             <p className="mt-2 text-sm text-muted-foreground">
               Tudo da nossa campanha em {CANDIDATO.cidade}, reunido em um só lugar.
@@ -140,7 +123,6 @@ function BioSite() {
           </Reveal>
         </header>
 
-        {/* MARQUEE */}
         <div className="relative mt-8 -mx-5 overflow-hidden border-y border-border bg-secondary/60 py-2">
           <div className="flex w-max animate-marquee gap-8 whitespace-nowrap">
             {Array.from({ length: 2 }).map((_, block) => (
@@ -150,7 +132,7 @@ function BioSite() {
                     key={i}
                     className="font-display text-lg uppercase tracking-widest text-foreground/90"
                   >
-                    Tô com {CANDIDATO.nome.split(" ")[0]} · {CANDIDATO.numero} ·
+                    Tô com {CANDIDATO.primeiroNome} · {CANDIDATO.numero} ·
                   </span>
                 ))}
               </div>
@@ -158,39 +140,43 @@ function BioSite() {
           </div>
         </div>
 
-        {/* AÇÕES / LINKS */}
-        <section aria-label="Links da campanha" className="mt-8 space-y-4">
-          {ACOES.map((acao, i) => {
-            const Icone = acao.icone;
-            return (
-              <Reveal key={acao.titulo} delay={i * 90}>
-                <a
-                  href={acao.href}
-                  target={acao.href.startsWith("http") ? "_blank" : undefined}
-                  rel="noreferrer"
-                  className={`group flex items-center gap-4 rounded-2xl p-4 ${
-                    acao.destaque ? "highlight-box surface-card" : "surface-card"
-                  }`}
-                >
-                  <span
-                    className={`grid h-12 w-12 shrink-0 place-items-center rounded-xl transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6 ${
-                      acao.destaque ? "bg-primary-foreground/20" : "bg-primary/20 text-primary"
-                    }`}
-                  >
-                    <Icone className="h-6 w-6" />
-                  </span>
-                  <span className="min-w-0 flex-1 text-left">
+        {/* BOTÕES COM AS ARTES DA CAMPANHA */}
+        <section aria-label="Links da campanha" className="mt-8 space-y-5">
+          {ACOES.map((acao, i) => (
+            <Reveal key={acao.titulo} delay={i * 90}>
+              <a
+                href={acao.href}
+                target={acao.href.startsWith("http") ? "_blank" : undefined}
+                rel="noreferrer"
+                className="group block overflow-hidden rounded-2xl surface-card"
+              >
+                <div className="relative overflow-hidden">
+                  <img
+                    src={acao.arte}
+                    alt={acao.titulo}
+                    loading={i === 0 ? "eager" : "lazy"}
+                    width={1920}
+                    height={628}
+                    className="w-full transition-transform duration-500 ease-out group-hover:scale-[1.06]"
+                  />
+                  {acao.destaque && (
+                    <span className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-black uppercase tracking-wider highlight-box">
+                      <MessageCircle className="h-3.5 w-3.5" /> Entre agora
+                    </span>
+                  )}
+                </div>
+                <div className="flex items-center gap-3 p-4">
+                  <span className="min-w-0 flex-1">
                     <span className="block font-display text-xl leading-tight">{acao.titulo}</span>
-                    <span className="block text-sm opacity-80">{acao.desc}</span>
+                    <span className="block text-sm text-muted-foreground">{acao.desc}</span>
                   </span>
-                  <ArrowUpRight className="h-5 w-5 shrink-0 opacity-60 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:opacity-100" />
-                </a>
-              </Reveal>
-            );
-          })}
+                  <ArrowUpRight className="h-5 w-5 shrink-0 text-primary transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                </div>
+              </a>
+            </Reveal>
+          ))}
         </section>
 
-        {/* BANDEIRAS */}
         <section aria-label="Nossas bandeiras" className="mt-12">
           <Reveal>
             <h2 className="text-3xl">
@@ -209,7 +195,6 @@ function BioSite() {
           </div>
         </section>
 
-        {/* REDES */}
         <section aria-label="Redes sociais" className="mt-12 text-center">
           <Reveal>
             <h2 className="text-2xl">Siga a campanha</h2>
@@ -239,7 +224,6 @@ function BioSite() {
         </footer>
       </div>
 
-      {/* CTA fixo */}
       <a
         href={CANDIDATO.whatsapp}
         target="_blank"
