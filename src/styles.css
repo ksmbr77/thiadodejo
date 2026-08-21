@@ -190,7 +190,22 @@
   }
 }
 
+@utility social-pill {
+  background: var(--gradient-orange);
+  color: var(--primary-foreground);
+  box-shadow: var(--shadow-pop);
+  transition:
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-glow);
+  }
+}
+
 @utility highlight-box {
+
   background: var(--gradient-orange);
   color: var(--primary-foreground);
   box-shadow: var(--shadow-pop);
