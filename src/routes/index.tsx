@@ -6,7 +6,7 @@ import banner2 from "@/assets/banner-2.jpg.asset.json";
 import banner3 from "@/assets/banner-3.jpg.asset.json";
 import banner4 from "@/assets/banner-4.jpg.asset.json";
 import banner5 from "@/assets/banner-5.jpg.asset.json";
-import thiagu from "@/assets/thiagu.png.asset.json";
+import perfil from "@/assets/perfil-thiago.png.asset.json";
 import { Reveal } from "@/components/Reveal";
 import { SocialRow } from "@/components/SocialRow";
 import { useClickSound } from "@/hooks/useClickSound";
@@ -14,29 +14,20 @@ import { useClickSound } from "@/hooks/useClickSound";
 
 
 const CANDIDATO = {
-  nome: "Thiago de Joaldo",
+  nome: "Thiago Joaldo",
   primeiroNome: "Thiago",
   cargo: "Deputado Federal",
   numero: "1011",
   slogan: "Esse é de coragem!",
   cidade: "Sergipe",
+  bio: "Esse é de coragem! Deputado Federal por Sergipe. 💙🔟1️⃣1️⃣",
   whatsapp: "https://wa.me/5500000000000",
 };
 
 const ACOES = [
   {
-    label: "WhatsApp",
-    arte: banner5.url,
-    href: CANDIDATO.whatsapp,
-  },
-  {
-    label: "Figurinhas",
-    arte: banner3.url,
-    href: "#",
-  },
-  {
-    label: "Jingles",
-    arte: banner4.url,
+    label: "Personalize seu perfil",
+    arte: banner1.url,
     href: "#",
   },
   {
@@ -45,11 +36,22 @@ const ACOES = [
     href: "#",
   },
   {
-    label: "Personalize seu perfil",
-    arte: banner1.url,
+    label: "Jingles",
+    arte: banner4.url,
     href: "#",
   },
+  {
+    label: "Figurinhas",
+    arte: banner3.url,
+    href: "#",
+  },
+  {
+    label: "WhatsApp",
+    arte: banner5.url,
+    href: CANDIDATO.whatsapp,
+  },
 ];
+
 
 
 export const Route = createFileRoute("/")({
@@ -87,34 +89,25 @@ function BioSite() {
       <div className="relative mx-auto w-full max-w-3xl px-4 pb-24 pt-10 sm:px-6 sm:pt-14">
         <header className="text-center">
           <Reveal>
-            <p className="text-xs font-black uppercase tracking-[0.35em] text-muted-foreground">
-              {CANDIDATO.cargo}
-            </p>
             <img
-              src={thiagu.url}
+              src={perfil.url}
               alt={`${CANDIDATO.nome}, candidato a ${CANDIDATO.cargo}`}
               width={690}
-              height={657}
+              height={690}
               loading="eager"
               decoding="async"
-              className="mx-auto mt-4 w-64 drop-shadow-[0_18px_40px_rgba(0,0,0,0.55)] animate-breathe sm:w-80"
+              className="mx-auto h-40 w-40 rounded-full object-cover shadow-[0_18px_40px_rgba(0,0,0,0.45)] sm:h-48 sm:w-48"
             />
-            <h1 className="mt-3 text-5xl sm:text-7xl">{CANDIDATO.nome}</h1>
-            <div className="mt-4 inline-flex -rotate-2 items-center rounded-xl px-7 py-2 highlight-box">
-              <span className="font-display text-4xl leading-none sm:text-6xl">
-                {CANDIDATO.numero}
-              </span>
-            </div>
-            <p className="mt-4 font-display text-2xl text-highlight sm:text-3xl">
-              {CANDIDATO.slogan}
+            <h1 className="mt-5 font-sans text-3xl font-bold normal-case tracking-normal sm:text-4xl">
+              {CANDIDATO.nome}
+            </h1>
+            <p className="mx-auto mt-2 max-w-md text-base leading-relaxed text-foreground/90 sm:text-lg">
+              {CANDIDATO.bio}
             </p>
             <SocialRow onActivate={playClick} />
-            <p className="mt-5 text-sm text-muted-foreground">
-              Tudo da nossa campanha em {CANDIDATO.cidade}, reunido em um só lugar.
-            </p>
-
           </Reveal>
         </header>
+
 
         {/* CARDS DA CAMPANHA */}
         <section aria-label="Links da campanha" className="mt-10 space-y-6 sm:mt-14 sm:space-y-8">
