@@ -1,12 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  Instagram,
-  Youtube,
-  Facebook,
-  MessageCircle,
-  ArrowUpRight,
-  Sparkles,
-} from "lucide-react";
+import { MessageCircle, ArrowUpRight } from "lucide-react";
 
 import banner1 from "@/assets/banner-1.jpg.asset.json";
 import banner2 from "@/assets/banner-2.jpg.asset.json";
@@ -60,12 +53,6 @@ const ACOES = [
   },
 ];
 
-const REDES = [
-  { nome: "Instagram", icone: Instagram, href: "#" },
-  { nome: "YouTube", icone: Youtube, href: "#" },
-  { nome: "Facebook", icone: Facebook, href: "#" },
-];
-
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -95,8 +82,6 @@ function BioSite() {
       <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -left-24 top-24 h-72 w-72 rounded-full bg-primary/25 blur-3xl animate-float" />
         <div className="absolute right-[-6rem] top-[28rem] h-80 w-80 rounded-full bg-accent/40 blur-3xl animate-float [animation-delay:1.5s]" />
-        <Sparkles className="absolute right-10 top-40 h-8 w-8 text-highlight animate-spark" />
-        <Sparkles className="absolute left-8 top-[22rem] h-6 w-6 text-highlight animate-spark [animation-delay:1s]" />
       </div>
 
       <div className="relative mx-auto w-full max-w-xl px-5 pb-28 pt-10 sm:pt-14">
@@ -180,45 +165,7 @@ function BioSite() {
             </Reveal>
           ))}
         </section>
-
-
-        <section aria-label="Redes sociais" className="mt-12 text-center">
-          <Reveal>
-            <h2 className="text-2xl">Siga a campanha</h2>
-            <div className="mt-4 flex justify-center gap-4">
-              {REDES.map((r) => {
-                const Icone = r.icone;
-                return (
-                  <a
-                    key={r.nome}
-                    href={r.href}
-                    aria-label={r.nome}
-                    className="grid h-14 w-14 place-items-center rounded-2xl surface-card text-primary"
-                  >
-                    <Icone className="h-6 w-6" />
-                  </a>
-                );
-              })}
-            </div>
-          </Reveal>
-        </section>
-
-        <footer className="mt-14 text-center text-xs text-muted-foreground">
-          <p className="font-display text-base text-foreground">
-            {CANDIDATO.nome} · {CANDIDATO.numero}
-          </p>
-          <p className="mt-2">Conteúdo eleitoral. Campanha {new Date().getFullYear()}.</p>
-        </footer>
       </div>
-
-      <a
-        href={CANDIDATO.whatsapp}
-        target="_blank"
-        rel="noreferrer"
-        className="fixed bottom-5 left-1/2 z-20 -translate-x-1/2 rounded-full px-6 py-3 font-display text-lg uppercase highlight-box transition-transform duration-300 hover:scale-105"
-      >
-        Entrar no grupo
-      </a>
     </main>
   );
 }
