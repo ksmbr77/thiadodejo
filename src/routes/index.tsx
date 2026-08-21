@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { Reveal } from "@/components/Reveal";
-import { SocialRow } from "@/components/SocialRow";
 import { useClickSound } from "@/hooks/useClickSound";
 
 const banner1 = { url: "/images/banner-1.jpg" };
@@ -104,7 +103,6 @@ function BioSite() {
             <p className="mx-auto mt-2 max-w-md text-base leading-relaxed text-foreground/90 sm:text-lg">
               {CANDIDATO.bio}
             </p>
-            <SocialRow onActivate={playClick} />
           </Reveal>
         </header>
 
