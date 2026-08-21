@@ -91,8 +91,8 @@ function BioSite() {
               {CANDIDATO.cargo}
             </p>
             <img
-              src={thiago.url}
-              alt={`${CANDIDATO.nome}, candidato a ${CANDIDATO.cargo}`}
+                src={thiagu.url}
+                alt={`${CANDIDATO.nome}, candidato a ${CANDIDATO.cargo}`}
               width={690}
               height={657}
               loading="eager"
