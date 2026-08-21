@@ -6,7 +6,7 @@ import banner2 from "@/assets/banner-2.jpg.asset.json";
 import banner3 from "@/assets/banner-3.jpg.asset.json";
 import banner4 from "@/assets/banner-4.jpg.asset.json";
 import banner5 from "@/assets/banner-5.jpg.asset.json";
-import thiago from "@/assets/thiago.png.asset.json";
+import thiagu from "@/assets/thiagu.png.asset.json";
 import { Reveal } from "@/components/Reveal";
 
 const CANDIDATO = {
