@@ -1,12 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  Instagram,
-  Youtube,
-  Facebook,
-  MessageCircle,
-  ArrowUpRight,
-  Sparkles,
-} from "lucide-react";
+import { MessageCircle, ArrowUpRight } from "lucide-react";
 
 import banner1 from "@/assets/banner-1.jpg.asset.json";
 import banner2 from "@/assets/banner-2.jpg.asset.json";
@@ -58,12 +51,6 @@ const ACOES = [
     arte: banner1.url,
     href: "#",
   },
-];
-
-const REDES = [
-  { nome: "Instagram", icone: Instagram, href: "#" },
-  { nome: "YouTube", icone: Youtube, href: "#" },
-  { nome: "Facebook", icone: Facebook, href: "#" },
 ];
 
 
