@@ -71,35 +71,39 @@ export const Route = createFileRoute("/")({
 });
 
 function BioSite() {
+  const playClick = useClickSound();
+
   return (
     <main className="relative overflow-hidden">
       <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -left-24 top-24 h-72 w-72 rounded-full bg-primary/25 blur-3xl animate-float" />
-        <div className="absolute right-[-6rem] top-[28rem] h-80 w-80 rounded-full bg-accent/40 blur-3xl animate-float [animation-delay:1.5s]" />
+        <div className="absolute -left-28 top-20 h-80 w-80 rounded-full bg-primary/20 blur-3xl animate-drift" />
+        <div className="absolute right-[-7rem] top-[30rem] h-96 w-96 rounded-full bg-accent/30 blur-3xl animate-drift [animation-delay:3s]" />
       </div>
 
-      <div className="relative mx-auto w-full max-w-xl px-5 pb-28 pt-10 sm:pt-14">
+      <div className="relative mx-auto w-full max-w-3xl px-4 pb-24 pt-10 sm:px-6 sm:pt-14">
         <header className="text-center">
           <Reveal>
             <p className="text-xs font-black uppercase tracking-[0.35em] text-muted-foreground">
               {CANDIDATO.cargo}
             </p>
             <img
-                src={thiagu.url}
-                alt={`${CANDIDATO.nome}, candidato a ${CANDIDATO.cargo}`}
+              src={thiagu.url}
+              alt={`${CANDIDATO.nome}, candidato a ${CANDIDATO.cargo}`}
               width={690}
               height={657}
               loading="eager"
               decoding="async"
-              className="mx-auto mt-4 w-56 drop-shadow-[0_18px_40px_rgba(0,0,0,0.55)] sm:w-64"
+              className="mx-auto mt-4 w-64 drop-shadow-[0_18px_40px_rgba(0,0,0,0.55)] animate-breathe sm:w-80"
             />
-            <h1 className="mt-3 text-5xl sm:text-6xl">{CANDIDATO.nome}</h1>
-            <div className="mt-4 inline-flex -rotate-2 items-center rounded-xl px-6 py-2 highlight-box">
-              <span className="font-display text-4xl leading-none sm:text-5xl">
+            <h1 className="mt-3 text-5xl sm:text-7xl">{CANDIDATO.nome}</h1>
+            <div className="mt-4 inline-flex -rotate-2 items-center rounded-xl px-7 py-2 highlight-box">
+              <span className="font-display text-4xl leading-none sm:text-6xl">
                 {CANDIDATO.numero}
               </span>
             </div>
-            <p className="mt-4 font-display text-2xl text-highlight">{CANDIDATO.slogan}</p>
+            <p className="mt-4 font-display text-2xl text-highlight sm:text-3xl">
+              {CANDIDATO.slogan}
+            </p>
             <p className="mt-2 text-sm text-muted-foreground">
               Tudo da nossa campanha em {CANDIDATO.cidade}, reunido em um só lugar.
             </p>
@@ -107,22 +111,25 @@ function BioSite() {
         </header>
 
         {/* CARDS DA CAMPANHA */}
-        <section aria-label="Links da campanha" className="mt-8 space-y-5">
+        <section aria-label="Links da campanha" className="mt-10 space-y-6 sm:mt-14 sm:space-y-8">
           {ACOES.map((acao, i) => (
-            <Reveal key={acao.label} delay={i * 90}>
+            <Reveal key={acao.label} delay={i * 110}>
               <a
                 href={acao.href}
                 target={acao.href.startsWith("http") ? "_blank" : undefined}
                 rel="noreferrer"
-                className="group block overflow-hidden rounded-2xl surface-card"
+                aria-label={acao.label}
+                onPointerDown={playClick}
+                className="group block overflow-hidden rounded-3xl surface-card press"
               >
                 <img
                   src={acao.arte}
                   alt={acao.label}
                   loading={i === 0 ? "eager" : "lazy"}
+                  decoding="async"
                   width={1920}
                   height={628}
-                  className="w-full transition-transform duration-500 ease-out group-hover:scale-[1.06]"
+                  className="w-full transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                 />
               </a>
             </Reveal>
@@ -132,3 +139,4 @@ function BioSite() {
     </main>
   );
 }
+
