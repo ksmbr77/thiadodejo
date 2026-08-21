@@ -6,7 +6,7 @@ import banner2 from "@/assets/banner-2.jpg.asset.json";
 import banner3 from "@/assets/banner-3.jpg.asset.json";
 import banner4 from "@/assets/banner-4.jpg.asset.json";
 import banner5 from "@/assets/banner-5.jpg.asset.json";
-import thiagu from "@/assets/thiagu.png.asset.json";
+import perfil from "@/assets/perfil-thiago.png.asset.json";
 import { Reveal } from "@/components/Reveal";
 import { SocialRow } from "@/components/SocialRow";
 import { useClickSound } from "@/hooks/useClickSound";
@@ -14,29 +14,20 @@ import { useClickSound } from "@/hooks/useClickSound";
 
 
 const CANDIDATO = {
-  nome: "Thiago de Joaldo",
+  nome: "Thiago Joaldo",
   primeiroNome: "Thiago",
   cargo: "Deputado Federal",
   numero: "1011",
   slogan: "Esse é de coragem!",
   cidade: "Sergipe",
+  bio: "Esse é de coragem! Deputado Federal por Sergipe. 💙🔟1️⃣1️⃣",
   whatsapp: "https://wa.me/5500000000000",
 };
 
 const ACOES = [
   {
-    label: "WhatsApp",
-    arte: banner5.url,
-    href: CANDIDATO.whatsapp,
-  },
-  {
-    label: "Figurinhas",
-    arte: banner3.url,
-    href: "#",
-  },
-  {
-    label: "Jingles",
-    arte: banner4.url,
+    label: "Personalize seu perfil",
+    arte: banner1.url,
     href: "#",
   },
   {
@@ -45,11 +36,22 @@ const ACOES = [
     href: "#",
   },
   {
-    label: "Personalize seu perfil",
-    arte: banner1.url,
+    label: "Jingles",
+    arte: banner4.url,
     href: "#",
   },
+  {
+    label: "Figurinhas",
+    arte: banner3.url,
+    href: "#",
+  },
+  {
+    label: "WhatsApp",
+    arte: banner5.url,
+    href: CANDIDATO.whatsapp,
+  },
 ];
+
 
 
 export const Route = createFileRoute("/")({
