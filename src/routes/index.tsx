@@ -105,6 +105,15 @@ function BioSite() {
             <p className="text-xs font-black uppercase tracking-[0.35em] text-muted-foreground">
               {CANDIDATO.cargo}
             </p>
+            <img
+              src={thiago.url}
+              alt={`${CANDIDATO.nome}, candidato a ${CANDIDATO.cargo}`}
+              width={690}
+              height={657}
+              loading="eager"
+              decoding="async"
+              className="mx-auto mt-4 w-56 drop-shadow-[0_18px_40px_rgba(0,0,0,0.55)] sm:w-64"
+            />
             <h1 className="mt-3 text-5xl sm:text-6xl">{CANDIDATO.nome}</h1>
             <div className="mt-4 inline-flex -rotate-2 items-center rounded-xl px-6 py-2 highlight-box">
               <span className="font-display text-4xl leading-none sm:text-5xl">
@@ -172,23 +181,6 @@ function BioSite() {
           ))}
         </section>
 
-        <section aria-label="Nossas bandeiras" className="mt-12">
-          <Reveal>
-            <h2 className="text-3xl">
-              Nossas <span className="text-highlight">bandeiras</span>
-            </h2>
-          </Reveal>
-          <div className="mt-5 grid gap-4 sm:grid-cols-2">
-            {BANDEIRAS.map((b, i) => (
-              <Reveal key={b.titulo} delay={i * 80}>
-                <article className="h-full rounded-2xl p-4 surface-card">
-                  <h3 className="font-display text-lg text-primary">{b.titulo}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">{b.desc}</p>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-        </section>
 
         <section aria-label="Redes sociais" className="mt-12 text-center">
           <Reveal>
