@@ -113,6 +113,36 @@
   }
 }
 
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -18px, 0) scale(1.04);
+  }
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -6px, 0);
+  }
+}
+
+@utility animate-drift {
+  animation: drift 14s ease-in-out infinite;
+  will-change: transform;
+}
+
+@utility animate-breathe {
+  animation: breathe 7s ease-in-out infinite;
+  will-change: transform;
+}
+
 @utility animate-float {
   animation: float-slow 6s ease-in-out infinite;
 }
@@ -130,6 +160,15 @@
 @utility animate-spark {
   animation: spark 2.4s ease-in-out infinite;
 }
+
+@utility press {
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:active {
+    transform: scale(0.985);
+  }
+}
+
 
 @utility text-outline {
   -webkit-text-stroke: 2px var(--foreground);
