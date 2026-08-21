@@ -21,33 +21,27 @@ const CANDIDATO = {
 
 const ACOES = [
   {
-    titulo: "Participe do nosso grupo",
-    desc: "Notícias da campanha em primeira mão no WhatsApp.",
+    label: "WhatsApp",
     arte: banner5.url,
     href: CANDIDATO.whatsapp,
-    destaque: true,
   },
   {
-    titulo: "Baixe o pacote de figurinhas",
-    desc: "Stickers para mandar em todos os grupos.",
+    label: "Figurinhas",
     arte: banner3.url,
     href: "#",
   },
   {
-    titulo: "Ouça os jingles",
-    desc: "O som que já está tocando em toda a região.",
+    label: "Jingles",
     arte: banner4.url,
     href: "#",
   },
   {
-    titulo: "Material de campanha",
-    desc: "Adesivos, santinhos e artes para imprimir.",
+    label: "Material de campanha",
     arte: banner2.url,
     href: "#",
   },
   {
-    titulo: "Personalize seu perfil",
-    desc: "Molduras com o 1011 para sua foto nas redes.",
+    label: "Personalize seu perfil",
     arte: banner1.url,
     href: "#",
   },
