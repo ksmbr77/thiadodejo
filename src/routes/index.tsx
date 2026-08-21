@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { MessageCircle, ArrowUpRight } from "lucide-react";
+
 
 import banner1 from "@/assets/banner-1.jpg.asset.json";
 import banner2 from "@/assets/banner-2.jpg.asset.json";
