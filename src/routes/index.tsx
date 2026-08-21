@@ -106,55 +106,24 @@ function BioSite() {
           </Reveal>
         </header>
 
-        <div className="relative mt-8 -mx-5 overflow-hidden border-y border-border bg-secondary/60 py-2">
-          <div className="flex w-max animate-marquee gap-8 whitespace-nowrap">
-            {Array.from({ length: 2 }).map((_, block) => (
-              <div key={block} className="flex gap-8">
-                {Array.from({ length: 6 }).map((__, i) => (
-                  <span
-                    key={i}
-                    className="font-display text-lg uppercase tracking-widest text-foreground/90"
-                  >
-                    Tô com {CANDIDATO.primeiroNome} · {CANDIDATO.numero} ·
-                  </span>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* BOTÕES COM AS ARTES DA CAMPANHA */}
+        {/* CARDS DA CAMPANHA */}
         <section aria-label="Links da campanha" className="mt-8 space-y-5">
           {ACOES.map((acao, i) => (
-            <Reveal key={acao.titulo} delay={i * 90}>
+            <Reveal key={acao.label} delay={i * 90}>
               <a
                 href={acao.href}
                 target={acao.href.startsWith("http") ? "_blank" : undefined}
                 rel="noreferrer"
                 className="group block overflow-hidden rounded-2xl surface-card"
               >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={acao.arte}
-                    alt={acao.titulo}
-                    loading={i === 0 ? "eager" : "lazy"}
-                    width={1920}
-                    height={628}
-                    className="w-full transition-transform duration-500 ease-out group-hover:scale-[1.06]"
-                  />
-                  {acao.destaque && (
-                    <span className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-black uppercase tracking-wider highlight-box">
-                      <MessageCircle className="h-3.5 w-3.5" /> Entre agora
-                    </span>
-                  )}
-                </div>
-                <div className="flex items-center gap-3 p-4">
-                  <span className="min-w-0 flex-1">
-                    <span className="block font-display text-xl leading-tight">{acao.titulo}</span>
-                    <span className="block text-sm text-muted-foreground">{acao.desc}</span>
-                  </span>
-                  <ArrowUpRight className="h-5 w-5 shrink-0 text-primary transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-                </div>
+                <img
+                  src={acao.arte}
+                  alt={acao.label}
+                  loading={i === 0 ? "eager" : "lazy"}
+                  width={1920}
+                  height={628}
+                  className="w-full transition-transform duration-500 ease-out group-hover:scale-[1.06]"
+                />
               </a>
             </Reveal>
           ))}
