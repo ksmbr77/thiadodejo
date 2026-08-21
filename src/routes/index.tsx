@@ -95,8 +95,6 @@ function BioSite() {
       <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -left-24 top-24 h-72 w-72 rounded-full bg-primary/25 blur-3xl animate-float" />
         <div className="absolute right-[-6rem] top-[28rem] h-80 w-80 rounded-full bg-accent/40 blur-3xl animate-float [animation-delay:1.5s]" />
-        <Sparkles className="absolute right-10 top-40 h-8 w-8 text-highlight animate-spark" />
-        <Sparkles className="absolute left-8 top-[22rem] h-6 w-6 text-highlight animate-spark [animation-delay:1s]" />
       </div>
 
       <div className="relative mx-auto w-full max-w-xl px-5 pb-28 pt-10 sm:pt-14">
