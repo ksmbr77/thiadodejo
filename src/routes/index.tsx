@@ -1,15 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-
-import banner1 from "@/assets/banner-1.jpg.asset.json";
-import banner2 from "@/assets/banner-2.jpg.asset.json";
-import banner3 from "@/assets/banner-3.jpg.asset.json";
-import banner4 from "@/assets/banner-4.jpg.asset.json";
-import banner5 from "@/assets/banner-5.jpg.asset.json";
-import perfil from "@/assets/perfil-thiago.png.asset.json";
 import { Reveal } from "@/components/Reveal";
 import { SocialRow } from "@/components/SocialRow";
 import { useClickSound } from "@/hooks/useClickSound";
+
+const banner1 = { url: "/images/banner-1.jpg" };
+const banner2 = { url: "/images/banner-2.jpg" };
+const banner3 = { url: "/images/banner-3.jpg" };
+const banner4 = { url: "/images/banner-4.jpg" };
+const banner5 = { url: "/images/banner-5.jpg" };
+const perfil = { url: "/images/perfil-thiago.png" };
 
 
 
