@@ -8,6 +8,8 @@ import banner4 from "@/assets/banner-4.jpg.asset.json";
 import banner5 from "@/assets/banner-5.jpg.asset.json";
 import thiagu from "@/assets/thiagu.png.asset.json";
 import { Reveal } from "@/components/Reveal";
+import { useClickSound } from "@/hooks/useClickSound";
+
 
 const CANDIDATO = {
   nome: "Thiago de Joaldo",
