@@ -178,45 +178,7 @@ function BioSite() {
             </Reveal>
           ))}
         </section>
-
-
-        <section aria-label="Redes sociais" className="mt-12 text-center">
-          <Reveal>
-            <h2 className="text-2xl">Siga a campanha</h2>
-            <div className="mt-4 flex justify-center gap-4">
-              {REDES.map((r) => {
-                const Icone = r.icone;
-                return (
-                  <a
-                    key={r.nome}
-                    href={r.href}
-                    aria-label={r.nome}
-                    className="grid h-14 w-14 place-items-center rounded-2xl surface-card text-primary"
-                  >
-                    <Icone className="h-6 w-6" />
-                  </a>
-                );
-              })}
-            </div>
-          </Reveal>
-        </section>
-
-        <footer className="mt-14 text-center text-xs text-muted-foreground">
-          <p className="font-display text-base text-foreground">
-            {CANDIDATO.nome} · {CANDIDATO.numero}
-          </p>
-          <p className="mt-2">Conteúdo eleitoral. Campanha {new Date().getFullYear()}.</p>
-        </footer>
       </div>
-
-      <a
-        href={CANDIDATO.whatsapp}
-        target="_blank"
-        rel="noreferrer"
-        className="fixed bottom-5 left-1/2 z-20 -translate-x-1/2 rounded-full px-6 py-3 font-display text-lg uppercase highlight-box transition-transform duration-300 hover:scale-105"
-      >
-        Entrar no grupo
-      </a>
     </main>
   );
 }
