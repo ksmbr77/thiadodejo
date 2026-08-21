@@ -8,7 +8,9 @@ import banner4 from "@/assets/banner-4.jpg.asset.json";
 import banner5 from "@/assets/banner-5.jpg.asset.json";
 import thiagu from "@/assets/thiagu.png.asset.json";
 import { Reveal } from "@/components/Reveal";
+import { SocialRow } from "@/components/SocialRow";
 import { useClickSound } from "@/hooks/useClickSound";
+
 
 
 const CANDIDATO = {
@@ -106,9 +108,11 @@ function BioSite() {
             <p className="mt-4 font-display text-2xl text-highlight sm:text-3xl">
               {CANDIDATO.slogan}
             </p>
-            <p className="mt-2 text-sm text-muted-foreground">
+            <SocialRow onActivate={playClick} />
+            <p className="mt-5 text-sm text-muted-foreground">
               Tudo da nossa campanha em {CANDIDATO.cidade}, reunido em um só lugar.
             </p>
+
           </Reveal>
         </header>
 
