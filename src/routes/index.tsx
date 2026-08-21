@@ -13,6 +13,7 @@ import banner2 from "@/assets/banner-2.jpg.asset.json";
 import banner3 from "@/assets/banner-3.jpg.asset.json";
 import banner4 from "@/assets/banner-4.jpg.asset.json";
 import banner5 from "@/assets/banner-5.jpg.asset.json";
+import thiago from "@/assets/thiago.png.asset.json";
 import { Reveal } from "@/components/Reveal";
 
 const CANDIDATO = {
@@ -65,12 +66,6 @@ const REDES = [
   { nome: "Facebook", icone: Facebook, href: "#" },
 ];
 
-const BANDEIRAS = [
-  { titulo: "Saúde perto de casa", desc: "Mais leitos, mutirões e atendimento no interior." },
-  { titulo: "Educação com futuro", desc: "Escolas em tempo integral e ensino técnico." },
-  { titulo: "Emprego e renda", desc: "Crédito para o pequeno negócio que gira a cidade." },
-  { titulo: "Água para o sertão", desc: "Obras de abastecimento que não param na promessa." },
-];
 
 export const Route = createFileRoute("/")({
   head: () => ({
