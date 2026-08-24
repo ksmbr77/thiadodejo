@@ -8,18 +8,19 @@ const banner2 = { url: "/images/banner-2.jpg" };
 const banner3 = { url: "/images/banner-3.jpg" };
 const banner4 = { url: "/images/banner-4.jpg" };
 const banner5 = { url: "/images/banner-5.jpg" };
-const perfil = { url: "/images/perfil-thiago.png" };
+const perfil = { url: "/images/perfil-thiago.jpg" };
 
 
 
 const CANDIDATO = {
-  nome: "Thiago Joaldo",
+  nome: "Thiago de Joaldo",
+  nomeDestaque: "Thiago de Joaldo 🔟1️⃣1️⃣💙",
   primeiroNome: "Thiago",
   cargo: "Deputado Federal",
   numero: "1011",
   slogan: "Esse é de coragem!",
   cidade: "Sergipe",
-  bio: "Esse é de coragem! Deputado Federal por Sergipe. 💙🔟1️⃣1️⃣",
+  bio: "Esse é de coragem! Deputado Federal.",
   whatsapp: "https://wa.me/5500000000000",
 };
 
@@ -27,22 +28,22 @@ const ACOES = [
   {
     label: "Personalize seu perfil",
     arte: banner1.url,
-    href: "#",
+    href: "https://apoio.top/q/thiago1011",
   },
   {
     label: "Material de campanha",
     arte: banner2.url,
-    href: "#",
+    href: "https://drive.google.com/drive/folders/1c0IdJdxWYdT_TNDPkXJMZn4g-P5KeMlt?usp=sharing",
   },
   {
     label: "Jingles",
     arte: banner4.url,
-    href: "#",
+    href: "https://stage.suamusica.com.br/thiagodejoaldo/jingles-thiago-de-joaldo",
   },
   {
     label: "Figurinhas",
     arte: banner3.url,
-    href: "#",
+    href: "https://sticker.ly/s/4YW6Y1",
   },
   {
     label: "WhatsApp",
@@ -91,14 +92,14 @@ function BioSite() {
             <img
               src={perfil.url}
               alt={`${CANDIDATO.nome}, candidato a ${CANDIDATO.cargo}`}
-              width={690}
-              height={690}
+              width={500}
+              height={500}
               loading="eager"
               decoding="async"
               className="mx-auto h-40 w-40 rounded-full object-cover shadow-[0_18px_40px_rgba(0,0,0,0.45)] sm:h-48 sm:w-48"
             />
             <h1 className="mt-5 font-sans text-3xl font-bold normal-case tracking-normal sm:text-4xl">
-              {CANDIDATO.nome}
+              {CANDIDATO.nomeDestaque}
             </h1>
             <p className="mx-auto mt-2 max-w-md text-base leading-relaxed text-foreground/90 sm:text-lg">
               {CANDIDATO.bio}
