@@ -38,7 +38,7 @@ const ACOES = [
   {
     label: "Jingles",
     arte: banner4.url,
-    href: "https://stage.suamusica.com.br/thiagodejoaldo/jingles-thiago-de-joaldo",
+    href: "https://open.spotify.com/album/1maH30CiPetmwutGNmfYaI",
   },
   {
     label: "Figurinhas",
