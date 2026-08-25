@@ -21,7 +21,7 @@ const CANDIDATO = {
   slogan: "Esse é de coragem!",
   cidade: "Sergipe",
   bio: "Esse é de coragem! Deputado Federal.",
-  whatsapp: "https://wa.me/5500000000000",
+  whatsapp: "https://chat.whatsapp.com/FK6U8iK48T3KmnKlr15pIk?mode=gi_t",
 };
 
 const ACOES = [
